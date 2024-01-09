@@ -15,8 +15,8 @@ export const Filter = ({ filter, setFilter, setSort }) => {
         </div>
         <div>
           <p>Ordernar:</p>
-          <button onClick={() => setSort("A-Z")}>A-Z</button>
-          <button onClick={() => setSort("Z-A")}>Z-A</button>
+          <button onClick={() => setSort("A-Z")}>A - Z</button>
+          <button onClick={() => setSort("Z-A")}>Z - A</button>
         </div>
       </div>
 

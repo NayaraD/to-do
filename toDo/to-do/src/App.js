@@ -7,24 +7,28 @@ import TodoForm from "./components/TodoForm";
 import Search from "./components/Search";
 import { Filter } from "./components/Filter";
 
+
 function App() {
   const [todos, setTodos] = useState([
     {
       id:1,
       text: "criar funcionalidade x no sistema",
       category: "Trabalho",
-      isCompleted: false,
+      dia: false,
+      isCompleted: false,      
     },
     {
       id:2,
       text: "Ir pra academia",
       category: "Pessoal",
+      dia: false,
       isCompleted: false,
     },
     {
       id:3,
       text: "Estudar React",
       category: "Estudos",
+      dia: false,
       isCompleted: false,
     }
   ])
@@ -34,7 +38,7 @@ function App() {
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("A-Z")
 
-  const addTodo = (text, category) => {
+  const addTodo = (text, category, dia) => {
 
     const newTodos = [
       ...todos, 
@@ -42,6 +46,7 @@ function App() {
         id: Math.floor(Math.random() * 10000),
         text,
         category,
+        dia,
         isCompleted: false,
       },
     ];
@@ -65,8 +70,12 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Lista de Tarefas</h1>
-      <Search search={search} setSearch={setSearch} />
+      <h1>YOU GOT THIS</h1>
+      
+        <TodoForm addTodo={addTodo} />     
+        <Search search={search} setSearch={setSearch} />
+      
+      
       <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
       <div className="todo-list">
         {todos
@@ -82,7 +91,7 @@ function App() {
           />    
         ))}
       </div>
-      <TodoForm addTodo={addTodo} />
+      
     </div>
   );
 }
