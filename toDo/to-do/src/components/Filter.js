@@ -1,23 +1,27 @@
 import React from 'react'
 
-export const Filter = ({ filter, setFilter, setSort }) => {
+export const Filter = ({ filter, setFilter, filtroDia, setFiltroDia}) => {
   return (
     <div className='filter'>
       <h2>Filtrar:</h2>
       <div className='filter-options'>
-        <div>
-          <p>Status:</p>
-          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <div>          
+          <select value={filter} onChange={(e) => setFilter(e.target.value)}> 
+            <option value="">Por status:</option>           
             <option value="All">Todas</option>
             <option value="Completed">Completas</option>
             <option value="Incomplete">Incompletas</option>
           </select>
         </div>
         <div>
-          <p>Ordernar:</p>
-          <button onClick={() => setSort("A-Z")}>A - Z</button>
-          <button onClick={() => setSort("Z-A")}>Z - A</button>
+          <select  value={filtroDia} onChange={(e) => setFiltroDia(e.target.value)}> 
+            <option value="">Por data:</option>                      
+            <option value="Today">Hoje</option>
+            <option value="Tomorrow">Amanhã</option>
+            <option value="Late">Atrasadas</option>
+          </select>                 
         </div>
+        
       </div>
 
     </div>

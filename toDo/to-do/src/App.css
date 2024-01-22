@@ -55,7 +55,19 @@ button:hover {
 }
 
 .todo-form {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;  
+}
+
+.campos {
+  display: flex;
+  justify-content: space-around;
+  gap: 3px;
+  align-content: stretch;
+}
+
+.tamanho {
+  width: 200px;
+  
 }
 
 .todo-list {
@@ -176,3 +188,14 @@ input,select {
 .warp {
   display: flex;
 }
+
+.p-datepicker-group-container {
+  background-color: #fff;
+  opacity: 0.9;
+  width: 220px;
+}
+
+.p-datepicker-month {
+  width: 50px;
+}
+
